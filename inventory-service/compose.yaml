@@ -1,0 +1,11 @@
+services:
+  mysql:
+    image: 'mysql:8.3.0'
+    container_name: 'mysql-inventory'
+    environment:
+      - 'MYSQL_DATABASE=db_inventory'
+      - 'MYSQL_PASSWORD=123'
+      - 'MYSQL_ROOT_PASSWORD=123'
+      - 'MYSQL_USER=admin'
+    ports:
+      - '3306'
