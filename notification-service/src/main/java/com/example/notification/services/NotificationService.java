@@ -1,6 +1,6 @@
-package com.example.notification_service.services;
+package com.example.notification.services;
 
-import com.example.notification_service.order.event.OrderPlaceEvent;
+import com.example.notification.order.event.OrderPlaceEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;

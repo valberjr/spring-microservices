@@ -1,4 +1,4 @@
-package com.example.notification_service;
+package com.example.notification;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;

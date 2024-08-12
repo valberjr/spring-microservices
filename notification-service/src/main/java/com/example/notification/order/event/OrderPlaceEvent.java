@@ -1,4 +1,4 @@
-package com.example.notification_service.order.event;
+package com.example.notification.order.event;
 
 import java.util.Objects;
 
