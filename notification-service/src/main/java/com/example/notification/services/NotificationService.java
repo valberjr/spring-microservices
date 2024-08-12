@@ -1,6 +1,6 @@
 package com.example.notification.services;
 
-import com.example.notification.order.event.OrderPlaceEvent;
+import com.example.order.event.OrderPlacedEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -11,6 +11,7 @@ import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Service;
 
 @Service
+
 public class NotificationService {
 
     private static final Logger log = LoggerFactory.getLogger(NotificationService.class);
@@ -22,24 +23,26 @@ public class NotificationService {
     }
 
     @KafkaListener(topics = "order-placed")
-    public void listen(OrderPlaceEvent orderPlaceEvent) {
-        log.info("Got message from order-placed topic {}", orderPlaceEvent);
+    public void listen(OrderPlacedEvent orderPlacedEvent) {
+        log.info("Got message from order-placed topic {}", orderPlacedEvent);
 
         MimeMessagePreparator messagePreparator = mimeMessage -> {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);
             messageHelper.setFrom("springshop@email.com");
-            messageHelper.setTo(orderPlaceEvent.getEmail());
-            messageHelper.setSubject(String.format("Your order with OrderNumber %s is placed successfully", orderPlaceEvent.getOrderNumber()));
+            messageHelper.setTo(orderPlacedEvent.getEmail().toString());
+            messageHelper.setSubject(String.format("Your order with OrderNumber %s is placed successfully", orderPlacedEvent.getOrderNumber()));
             messageHelper.setText(String.format(
                     """
-                            Hi
+                            Hi %s %s
                             
                             Your order with order number %s is now placed successfully
                             
                             Best Regards
                             Spring Shp
                             """,
-                    orderPlaceEvent.getOrderNumber()
+                    orderPlacedEvent.getFirstName(),
+                    orderPlacedEvent.getLastName(),
+                    orderPlacedEvent.getOrderNumber()
             ));
         };
 
