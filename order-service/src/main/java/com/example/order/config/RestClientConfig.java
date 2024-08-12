@@ -1,6 +1,6 @@
-package com.example.order_service.config;
+package com.example.order.config;
 
-import com.example.order_service.client.InventoryClient;
+import com.example.order.client.InventoryClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.ClientHttpRequestFactories;
 import org.springframework.boot.web.client.ClientHttpRequestFactorySettings;

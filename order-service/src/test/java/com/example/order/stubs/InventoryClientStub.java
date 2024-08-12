@@ -1,4 +1,4 @@
-package com.example.order_service.stubs;
+package com.example.order.stubs;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 

@@ -1,4 +1,4 @@
-package com.example.order_service.dto;
+package com.example.order.dto;
 
 public record UserDetail(String email, String firstName, String lastName) {
 }

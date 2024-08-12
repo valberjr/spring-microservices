@@ -1,4 +1,4 @@
-package com.example.order_service;
+package com.example.order;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;

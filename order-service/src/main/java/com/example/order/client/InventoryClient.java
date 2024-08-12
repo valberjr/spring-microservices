@@ -1,4 +1,4 @@
-package com.example.order_service.client;
+package com.example.order.client;
 
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;

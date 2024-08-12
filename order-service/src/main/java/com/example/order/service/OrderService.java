@@ -1,10 +1,10 @@
-package com.example.order_service.service;
+package com.example.order.service;
 
-import com.example.order_service.client.InventoryClient;
-import com.example.order_service.dto.OrderRequest;
-import com.example.order_service.event.OrderPlaceEvent;
-import com.example.order_service.model.Order;
-import com.example.order_service.repository.OrderRepository;
+import com.example.order.client.InventoryClient;
+import com.example.order.dto.OrderRequest;
+import com.example.order.event.OrderPlaceEvent;
+import com.example.order.model.Order;
+import com.example.order.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
